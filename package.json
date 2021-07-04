@@ -1,0 +1,15 @@
+{
+  "name": "notion-react-renderer",
+  "version": "0.1.0",
+  "description": "A react renderer for the Notion API blocks",
+  "main": "index.js",
+  "repository": "https://github.com/nathanchu/notion-react-renderer.git",
+  "author": "Nathan Chu",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}
