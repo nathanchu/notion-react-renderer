@@ -66,29 +66,29 @@ const RichTextRenderer = ({ text, as, colors = {} }) => {
 const ReactNotionRenderer = ({ blocks, colors }) => {
   return (
     <div>
-      {blocks.map(v => {
+      {blocks.map((v, i) => {
         if (v.type === 'paragraph') {
           return (
-            <div>
+            <div key={i}>
               <RichTextRenderer colors={colors} text={v.paragraph.text} />
               {v.has_children && <ReactNotionRenderer blocks={v.children} />}
             </div>
           )
         } else if (v.type === 'heading_1') {
           return (
-            <div>
+            <div key={i}>
               <RichTextRenderer colors={colors} as="h1" text={v[v.type].text} />
             </div>
           )
         } else if (v.type === 'heading_2') {
           return (
-            <div>
+            <div key={i}>
               <RichTextRenderer colors={colors} as="h2" text={v[v.type].text} />
             </div>
           )
         } else if (v.type === 'heading_3') {
           return (
-            <div>
+            <div key={i}>
               <RichTextRenderer colors={colors} as="h3" text={v[v.type].text} />
             </div>
           )
